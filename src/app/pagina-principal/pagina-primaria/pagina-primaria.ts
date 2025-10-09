@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { faGithub, faLinkedin, faJava, faAngular,faGitAlt } from '@fortawesome/free-brands-svg-icons'
-import {faGlobe,faGears,faSitemap, faTableCellsColumnLock,faBrain} from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faLinkedin, faJava, faAngular,faGitAlt, faAws } from '@fortawesome/free-brands-svg-icons'
+import {faGlobe,faGears,faSitemap, faTableCellsColumnLock,faBrain,faCodeCompare,faDatabase} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatCardModule} from '@angular/material/card';
+
 
 
 
@@ -23,4 +24,7 @@ export class PaginaPrimaria {
   faJava = faJava
   faAngular = faAngular
   faGitAlt = faGitAlt
+  faCodeCompare = faCodeCompare
+  faAws = faAws
+  faDatabase = faDatabase
 }
