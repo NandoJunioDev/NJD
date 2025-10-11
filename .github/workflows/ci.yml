@@ -1,0 +1,28 @@
+deploy:
+  needs: build-and-test
+  runs-on: ubuntu-latest
+
+  steps:
+   - name: Checkout code
+    uses: actions/checkout@v3
+
+   - name: Configurar node
+    uses: actions/setup-node@v4
+      with:
+       node-version: '20'
+   - name: Instalar dependencias
+    run: npm install
+   - name: Construir proyecto
+   -run: npm run  build -- --configuration production --base-href /NJD/
+
+   -name: Publica no github pages
+   uses: peaceiris/actions-gh-pages@v3
+    with:
+     github_token: ${{ secrets.GITHUB_TOKEN }}
+     publish_dir: ./dist/NJD
+     
+
+
+
+
+
