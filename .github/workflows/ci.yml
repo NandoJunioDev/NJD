@@ -1,25 +1,38 @@
-deploy:
-  needs: build-and-test
-  runs-on: ubuntu-latest
+on:
+  push:
+    branches:
+      - main
 
-  steps:
-   - name: Checkout code
-    uses: actions/checkout@v3
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-   - name: Configurar node
-    uses: actions/setup-node@v4
+    - name: Configurar node
+      uses: actions/setup-node@v4
       with:
-       node-version: '20'
-   - name: Instalar dependencias
-    run: npm install
-   - name: Construir proyecto
-   -run: npm run  build -- --configuration production --base-href /NJD/
+        node-version: '20'
 
-   -name: Publica no github pages
-   uses: peaceiris/actions-gh-pages@v3
-    with:
-     github_token: ${{ secrets.GITHUB_TOKEN }}
-     publish_dir: ./dist/NJD
+    - name: Instalar dependencias
+      run: npm install
+
+    - name: Testar projeto
+      run: npm test
+
+    - name: Construir projeto
+      run: npm run build -- --configuration production --base-href /NJD/
+
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Publica no github pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist/NJD
      
 
 
