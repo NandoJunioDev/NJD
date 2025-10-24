@@ -3,13 +3,15 @@ import { faGithub, faLinkedin, faJava, faAngular,faGitAlt, faAws } from '@fortaw
 import {faGlobe,faGears,faSitemap, faTableCellsColumnLock,faBrain,faCodeCompare,faDatabase, faCode,faCloud,faGraduationCap,faHandshake} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatCardModule} from '@angular/material/card';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
 
 
 
 
 @Component({
   selector: 'app-pagina-primaria',
-  imports: [  FontAwesomeModule, MatCardModule ],
+  imports: [  FontAwesomeModule, MatCardModule, MatSlideToggleModule ],
   templateUrl: './pagina-primaria.html',
   styleUrl: './pagina-primaria.scss'
 })
