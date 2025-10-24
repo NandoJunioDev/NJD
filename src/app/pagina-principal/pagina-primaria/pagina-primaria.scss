@@ -172,6 +172,8 @@
         flex-direction:row;
         flex-flow: nowrap ;
         justify-content: space-between;
+        margin-top: 10em;
+        margin-bottom: 10em ;
 
       }
       .card{
@@ -185,6 +187,13 @@
         cursor: pointer;
 
         width:48%;
+      }
+      .card-header-title{
+
+        font-size: 1.5em;
+        margin-bottom: 15px;
+        color: #00f5ff;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       }
 
 
@@ -374,5 +383,27 @@
         .social-links a {
           width: 100%;
           max-width: 200px;
+        }
+        .card-section{
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          text-overflow: clip;
+          color: #b0b0b0;
+        }
+        .card{
+          
+        }
+
+        .card-header-title{
+          font-size: 2em;
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+        }
+        .mat-card-header{
+          justify-content: center;
+          align-items: center;
+          text-align: center;
         }
       }
